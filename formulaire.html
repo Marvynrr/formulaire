@@ -125,7 +125,7 @@
                 <input type="checkbox" name="bouffe[]" value="Kouign-amann" id="breton2">
                 <label for="breton2">Kouign-amann</label>
             </fieldset>
-            </fieldset>
+            <fieldset>
                 <legend><h2>Vos préférences sportives</h2></legend>
                 <label for="sport">Sélectionner vos sports favoris</label>
                 <select name="sport[]" id="sport">
@@ -135,7 +135,18 @@
                     <option value="Athlétisme">Athlétisme</option>
                     <option value="Kickboxing">Kickboxing</option>
                     <option value="MMA">MMA</option>
-        </select>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend><h2>Présentez-vous</h2></legend>
+                <textarea name="présentation" cols="350" rows="100"></textarea>
+                <br><br>
+                <label for="temps">Quel heure est-il ?</label>
+                <input type="time" name="temps" id="temps">
+            </fieldset>
+        </fieldset>
+        <button type="submit" name="submit">Envoyer</button>
+        <input type="reset" name="delete" value="Effacer">
     </form>
 </body>
 </html>
