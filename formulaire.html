@@ -45,10 +45,11 @@
             <input type="url" name="site" id="site" placeholder="https://...">
             <br><br>
             <label for="motdepasse1">Mot de passe :</label>
-            <input for="password" name="motdepasse" id="motdepasse1" required>
+            <input type="password" name="motdepasse" id="motdepasse1" required>
+            <button type="button" name="affiche" onclick="affichePassword();">Voir</button>
             <br><br>
             <label for="motdepasse2">Répéter mot de passe :</label>
-            <input for="password" name="motdepasse2" id="motdepasse2" required>
+            <input type="password" name="motdepasse2" id="motdepasse2" required>
         </fieldset>
         <fieldset>
             <legend><h2>En savoir plus sur vous (RGPD friendly)</h2></legend>
@@ -148,5 +149,20 @@
         <button type="submit" name="submit">Envoyer</button>
         <input type="reset" name="delete" value="Effacer">
     </form>
+    <script type="text/javascript">
+        function affichePassword() {
+            // Je vais sélectionner l'élément sur lequel je dois intervenir
+            let champs = document.getElementById('motdepasse1');
+            // Je récupère le type courant
+            let type = champs.getAttribute('type');
+            if (type == 'password') {
+                // Si c'est password je passe en text pour afficher le mot de passe
+                champs.setAttribute('type', 'text');                
+            } else{
+                // Sinon je passe en password pour le cacher
+                champs.setAttribute('type', 'password');
+            }
+        }
+    </script>
 </body>
 </html>
