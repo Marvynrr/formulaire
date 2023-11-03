@@ -27,7 +27,7 @@
             <label for="civilité">Civilité</label>
             <input type="radio" name="civ" id="civ1" value="Mme"><label for="civ1">Madame</label>
             <input type="radio" name="civ" id="civ2" value="M"><label for="civ2">Monsieur</label>
-            <input type="radio" name="civ" id="civ3" value="non-binaire"><label for="civ3">Non-binaire</label>
+            <input type="radio" name="civ" id="civ3" value="non-binaire" checked="checked"><label for="civ3">Non-binaire</label>
             <br><br>
             <label for="nom">Nom :</label>
             <input type="text" name="nom" id="nom" placeholder="Votre nom" required>
@@ -144,6 +144,12 @@
                 <br><br>
                 <label for="temps">Quel heure est-il ?</label>
                 <input type="time" name="temps" id="temps">
+                <br><br>
+                <label for="galerie">Envoyez votre album</label>
+                <input type="file" id="galerie" name="galerie[]" multiple>
+                <br><br>
+                <label for="couleur">Quelle est votre couleur favorite ?</label>
+                <input type="color" name="couleur" id="couleur">
             </fieldset>
         </fieldset>
         <button type="submit" name="submit">Envoyer</button>
