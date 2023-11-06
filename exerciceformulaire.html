@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tirage formulaire</title>
+    <style>
+        body {
+  background: linear-gradient(90deg,rgb(245, 190, 158), rgb(158, 164, 245));
+    }   fieldset {
+background-color: rgb(255, 255, 255);
+    }
+</style>
+
 </head>
 <body>
     <form name="premier" method="POST" action="tirage.php" enctype="multipart/form-data">
@@ -79,10 +87,50 @@
             <br>
             <input type="text" name="apprenant[]" id="apprenants12">
             <br><br>
-            <button type="submit" name="submit1">Envoyer</button>
-            <input type="reset" name="delete" value="Effacer">
+            <button type="submit" name="submit2">Envoyer</button>
+            <input type="reset" name="delete2" value="Effacer">
             </fieldset>
         </fieldset>
     </form>
+    <form name="premier" method="POST" action="traitement.php" enctype="multipart/form-data"></form>
+        <fieldset>
+            <legend><h2>Formulaire exercice 2</h2></legend>
+        <fieldset>
+            <label for="civilité">Civilité</label>
+            <input type="radio" name="civ" id="civ1" value="Madame"><label for="civ1">Madame</label>
+            <input type="radio" name="civ" id="civ2" value="Monsieur"><label for="civ2">Monsieur</label>
+            <input type="radio" name="civ" id="civ3" value="Autre" checked="checked"><label for="civ3">Autre</label>
+            <br><br>
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" placeholder="Votre nom" required>
+            <br><br>
+            <label for="prenom">Prénom :</label>
+            <input type="text" name="prenom" id="nom" placeholder="Votre prénom" required>
+            <br><br>
+            <label for="mail">Email :</label>
+            <input type="email" name="email" id="email" placeholder="Votre email" required>
+            <br><br>
+            <label for="motdepasse1">Mot de passe :</label>
+            <input type="password" name="motdepasse" id="motdepasse1" placeholder="Votre mot de passe" required>
+            <button type="button" name="affiche" onclick="affichePassword();">Voir</button>
+            <br><br>
+            <label for="motdepasse2">Répétez mot de passe :</label>
+            <input type="password" name="motdepasse" id="motdepasse2" placeholder="Votre mot de passe" required>
+    </form>
+    <script type="text/javascript">
+        function affichePassword() {
+            // Je vais sélectionner l'élément sur lequel je dois intervenir
+            let champs = document.getElementById('motdepasse1');
+            // Je récupère le type courant
+            let type = champs.getAttribute('type');
+            if (type == 'password') {
+                // Si c'est password je passe en text pour afficher le mot de passe
+                champs.setAttribute('type', 'text');                
+            } else{
+                // Sinon je passe en password pour le cacher
+                champs.setAttribute('type', 'password');
+            }
+        }
+    </script>
 </body>
 </html>
